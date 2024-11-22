@@ -6,14 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "mu16zi <mjnoroozi.me@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "asdasd"
+    "url": "https://github.com/mu16zi/renderlens.git"
   },
-  "author": "mu16zi",
+  "bugs": {
+    "url": "https://github.com/mu16zi/renderlens/issues"
+  },
+  "homepage": "https://github.com/mu16zi/renderlens#readme",
   "keywords": [
     "render",
     "DOM"
   ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "license": "MIT"
 }
