@@ -2,10 +2,25 @@
   "name": "renderlens",
   "version": "0.1.1",
   "description": "Framework-agnostic DOM and render observation tool.",
-  "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
+  "main": "dist/renderlens.umd.js",
+  "module": "dist/renderlens.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/renderlens.es.js",
+      "require": "./dist/renderlens.umd.js"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "mu16zi <mjnoroozi.me@gmail.com>",
   "repository": {
     "type": "git",
@@ -20,7 +35,15 @@
     "DOM"
   ],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "vue": "^3"
+  }
 }
