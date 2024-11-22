@@ -1,0 +1,19 @@
+{
+  "name": "renderlens",
+  "version": "0.1.0",
+  "description": "Framework-agnostic DOM and render observation tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "asdasd"
+  },
+  "author": "mu16zi",
+  "keywords": [
+    "render",
+    "DOM"
+  ],
+  "license": "MIT"
+}
