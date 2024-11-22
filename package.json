@@ -1,6 +1,6 @@
 {
   "name": "renderlens",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Framework-agnostic DOM and render observation tool.",
   "scripts": {
     "dev": "vite",
