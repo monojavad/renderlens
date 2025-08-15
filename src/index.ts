@@ -1,31 +1,31 @@
 "use strict";
 
-function highlightElement(el: Element | Node): void {
-  if (el instanceof HTMLElement && el.style) {
-    el.style.transition = "box-shadow 0.3s ease-in-out";
-    el.style.boxShadow = "0 0 10px red";
-    setTimeout(() => (el.style.boxShadow = ""), 300);
+(function initRenderLens(): void {
+  function highlightElement(el: Element): void {
+    if (!(el instanceof HTMLElement)) return;
+    el.animate(
+      [
+        { boxShadow: "0 0 0px red" },
+        { boxShadow: "0 0 10px red" },
+        { boxShadow: "0 0 0px red" },
+      ],
+      { duration: 500, easing: "ease-in-out", fill: "forwards" }
+    );
   }
-}
 
-const observer: MutationObserver = new MutationObserver(
-  (mutationsList: MutationRecord[]) => {
-    mutationsList.forEach((mutation: MutationRecord) => {
-      if (mutation.attributeName === "style") {
-        // Avoid infinite loop due to observer also makes style changes on highlight.
-        return;
-      }
-      console.log("Mutation detected! ", mutation);
-      highlightElement(mutation.target);
-    });
-  }
-);
+  const observer = new MutationObserver((mutationsList: MutationRecord[]) => {
+    for (const mutation of mutationsList) {
+      highlightElement(mutation.target as Element);
+      console.log("[RenderLens] Mutation detected: ", mutation);
+    }
+  });
 
-observer.observe(document.body, {
-  attributes: true,
-  childList: true,
-  subtree: true,
-  attributeOldValue: true,
-  characterData: true,
-  characterDataOldValue: true,
-});
+  observer.observe(document.documentElement, {
+    attributes: true,
+    childList: true,
+    subtree: true,
+    attributeOldValue: true,
+    characterData: true,
+    characterDataOldValue: true,
+  });
+})();
