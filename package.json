@@ -1,7 +1,7 @@
 {
   "name": "renderlens",
-  "version": "0.1.5",
-  "description": "Framework-agnostic DOM and render observation tool.",
+  "version": "0.1.6",
+  "description": "Framework-agnostic rendering observation.",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -21,15 +21,15 @@
   "files": [
     "dist"
   ],
-  "author": "mu16zi <mjnoroozi.me@gmail.com>",
+  "author": "monojavad <mjnoroozi.me@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mu16zi/renderlens.git"
+    "url": "https://github.com/monojavad/renderlens.git"
   },
   "bugs": {
-    "url": "https://github.com/mu16zi/renderlens/issues"
+    "url": "https://github.com/monojavad/renderlens/issues"
   },
-  "homepage": "https://github.com/mu16zi/renderlens#readme",
+  "homepage": "https://github.com/monojavad/renderlens#readme",
   "keywords": [
     "render",
     "DOM"
@@ -41,9 +41,5 @@
   "devDependencies": {
     "typescript": "^5.6.3",
     "vite": "^5.4.11"
-  },
-  "peerDependencies": {
-    "react": "^17 || ^18",
-    "vue": "^3"
   }
 }
